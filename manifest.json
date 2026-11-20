@@ -1,0 +1,129 @@
+{
+  "format": "bug-detective-project",
+  "formatVersion": 1,
+  "project": {
+    "id": "smokedesk",
+    "name": "Smoke Desk",
+    "difficulty": "beginner",
+    "stack": {
+      "frontend": "React · Vite · CSS Modules",
+      "backend": "Node.js · Express (API and audit service)",
+      "database": "PostgreSQL · MySQL"
+    },
+    "services": {
+      "notes-db": {
+        "image": "postgres:17",
+        "memory": "256m",
+        "env": {
+          "POSTGRES_PASSWORD": "smokedesk",
+          "POSTGRES_DB": "notes"
+        },
+        "variables": {
+          "NOTES_DATABASE_URL": "postgres://postgres:smokedesk@{{host}}:{{port}}/notes"
+        }
+      },
+      "audit-db": {
+        "image": "mysql:8.4",
+        "memory": "512m",
+        "env": {
+          "MYSQL_ROOT_PASSWORD": "smokedesk",
+          "MYSQL_DATABASE": "audit"
+        },
+        "variables": {
+          "AUDIT_DATABASE_URL": "mysql://root:smokedesk@{{host}}:{{port}}/audit",
+          "MYSQL_HOST": "{{host}}",
+          "MYSQL_TCP_PORT": "{{port}}"
+        }
+      }
+    },
+    "ports": {
+      "client": {
+        "port": 5173,
+        "open": true,
+        "label": {
+          "en": "Smoke Desk",
+          "pt": "Smoke Desk"
+        },
+        "variables": {
+          "CLIENT_ORIGIN": "http://localhost:{{port}}"
+        }
+      },
+      "api": {
+        "port": 3001
+      },
+      "audit": {
+        "port": 3002,
+        "label": {
+          "en": "Audit service",
+          "pt": "Serviço de auditoria"
+        },
+        "variables": {
+          "VITE_AUDIT_URL": "http://localhost:{{port}}"
+        }
+      }
+    }
+  },
+  "version": "1.0.0",
+  "createdAt": "2026-11-20T14:52:43.191Z",
+  "tickets": {
+    "total": 2,
+    "front": 1,
+    "back": 1
+  },
+  "entries": [
+    {
+      "id": "front-1",
+      "track": "front",
+      "order": 1,
+      "branch": "front-1",
+      "tag": "front-1-v1.0.0",
+      "commit": "092252cd38c71e4eb7b82578c3ecaebd08368a78",
+      "commitMessage": "Smoke Desk release front-1",
+      "codeDigest": "sha256:90de9906ce9c806d823b3909d75a40911b2c8ded589db4288d52a7fdb04df434",
+      "codeFiles": 59,
+      "package": {
+        "path": "tickets/front-1",
+        "files": 20,
+        "digest": "sha256:4cf2a7b637dd8d539a0ab8e0758d38303e3a031a13fd59f1d6f07223870a83d7"
+      },
+      "type": "fix",
+      "skills": {
+        "en": [
+          "Configuration and feature flags",
+          "Working with APIs"
+        ],
+        "pt": [
+          "Configuração e opções de funcionalidade",
+          "Consumo de API"
+        ]
+      }
+    },
+    {
+      "id": "back-1",
+      "track": "back",
+      "order": 1,
+      "branch": "back-1",
+      "tag": "back-1-v1.0.0",
+      "commit": "cb58c1f015141f75aa823f17e17288b0100446b7",
+      "commitMessage": "Smoke Desk release back-1",
+      "codeDigest": "sha256:1335b98bd0c2ae8d8bc621103c4caf5dd2e73d3e9aad76f54b00e7e301e3d8e6",
+      "codeFiles": 59,
+      "package": {
+        "path": "tickets/back-1",
+        "files": 20,
+        "digest": "sha256:b8b74bd1a084585424dbfa687a8ee75f0f5e22763076c5aafcfa95e9d59baf00"
+      },
+      "type": "fix",
+      "skills": {
+        "en": [
+          "Communication between services",
+          "Routes and endpoints"
+        ],
+        "pt": [
+          "Comunicação entre serviços",
+          "Criação de rotas e endpoints"
+        ]
+      }
+    }
+  ]
+}
