@@ -1,0 +1,26 @@
+{
+  "notes-db": {
+    "image": "postgres:17",
+    "memory": "256m",
+    "env": {
+      "POSTGRES_PASSWORD": "smokedesk",
+      "POSTGRES_DB": "notes"
+    },
+    "variables": {
+      "NOTES_DATABASE_URL": "postgres://postgres:smokedesk@{{host}}:{{port}}/notes"
+    }
+  },
+  "audit-db": {
+    "image": "mysql:8.4",
+    "memory": "512m",
+    "env": {
+      "MYSQL_ROOT_PASSWORD": "smokedesk",
+      "MYSQL_DATABASE": "audit"
+    },
+    "variables": {
+      "AUDIT_DATABASE_URL": "mysql://root:smokedesk@{{host}}:{{port}}/audit",
+      "MYSQL_HOST": "{{host}}",
+      "MYSQL_TCP_PORT": "{{port}}"
+    }
+  }
+}
