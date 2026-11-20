@@ -1,0 +1,52 @@
+{
+  "client": {
+    "name": "Pinewood Coworking",
+    "about": "Pinewood Coworking rents desks and meeting rooms on two floors of an old mill. Its front desk runs on notes: who is expected, what is broken, what the next shift must know. Smoke Desk keeps those notes, and an audit service keeps the history of every change.",
+    "contacts": "Nora Bell (front desk lead) and Sam Ortiz (IT contractor) report the tickets.",
+    "reporters": [
+      {
+        "name": "Nora Bell",
+        "role": "Front desk lead"
+      },
+      {
+        "name": "Sam Ortiz",
+        "role": "IT contractor"
+      }
+    ]
+  },
+  "project": {
+    "name": "Smoke Desk",
+    "about": "The notes of a front desk, with the history of every change. Two services talk over HTTP: the API keeps the notes in PostgreSQL and tells the audit service, which keeps the history in MySQL.",
+    "stack": "React, Vite and CSS Modules; Node.js and Express, in two services; PostgreSQL and MySQL",
+    "skills": [
+      "Configuration and feature flags",
+      "Working with APIs",
+      "Communication between services",
+      "Routes and endpoints"
+    ]
+  },
+  "messages": {
+    "welcome": {
+      "subject": "Welcome to the Smoke Desk project!",
+      "body": "Hi, and welcome aboard!\n\nI'm Rafaela, the engineering manager here. You're joining **Smoke Desk**, the notes of the front desk of **Pinewood Coworking**. It is small: two tickets, one for each track.\n\nHere's how we work:\n\n- Your tickets show up on the **Board**. Drag one to **In Progress** when you start, and to **In QA** when you think it's done.\n- **Open in VS Code** attaches your editor to your workspace. Run `npm run dev` in the VS Code terminal: it starts the client, the API and the audit service. **Open app in browser** opens the desk; the Dashboard shows the port each service got.\n- This project has two databases next to your workspace: a **PostgreSQL** for the notes and a **MySQL** for the history. `npm run db:reset` puts the samples back in both.\n- QA runs the project tests first, then checks the ticket itself.\n- Stuck? Message **Priya** from the ticket, one hint at a time.\n\nWhen you're ready, click **Get next assignment**.\n\nRafaela"
+    },
+    "assignments": {
+      "front-1": {
+        "subject": "New ticket: SD-101",
+        "body": "Sam says the Activity panel is empty on his computer, and Nora says it works on hers.\n\nCheck where the panel looks for the audit service."
+      },
+      "back-1": {
+        "subject": "New ticket: SD-201",
+        "body": "A note disappeared and the history has no trace of it. Nora wants to know who deletes what.\n\nCheck what the API tells the audit service."
+      }
+    },
+    "completion": {
+      "subject": "Smoke Desk: project complete!",
+      "body": "You finished the whole {{track}} track of Smoke Desk, so this project is done on your side. Nora and Sam say thanks.\n\nYou can take the other track whenever you like.\n\nRafaela"
+    },
+    "trackCompletion": {
+      "subject": "The {{track}} track is complete!",
+      "body": "You closed every {{track}} ticket of Smoke Desk. Nice work.\n\nRafaela"
+    }
+  }
+}

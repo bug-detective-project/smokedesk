@@ -1,0 +1,7 @@
+{
+  "hints": [
+    "O serviço de auditoria guarda o que lhe contam, e só a API conta alguma coisa. Compare o que a API faz depois de criar um recado com o que faz depois de apagar: as duas rotas estão em `server/src/app.ts`.",
+    "`POST /api/notes` grava o recado e depois chama `tell({ action: 'created', ... })`, que envia o evento ao serviço de auditoria (`server/src/audit-client.ts`). `DELETE /api/notes/:id` apaga o recado e responde 204, e nunca chama `tell`.",
+    "Depois de apagar o recado, e só quando ele existia, avise o serviço de auditoria antes de responder: `await tell({ action: 'deleted', noteId: note.id, text: note.text });`. `deleteNote` devolve o recado apagado, então o texto dele ainda está ali. `tell` já registra a falha no log em vez de lançar, então o recado é apagado mesmo com o serviço de auditoria fora do ar."
+  ]
+}

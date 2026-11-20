@@ -1,0 +1,52 @@
+{
+  "client": {
+    "name": "Pinewood Coworking",
+    "about": "O Pinewood Coworking aluga mesas e salas de reunião em dois andares de um antigo moinho. A recepção funciona à base de recados: quem é esperado, o que quebrou, o que o próximo turno precisa saber. O Smoke Desk guarda esses recados, e um serviço de auditoria guarda o histórico de cada mudança.",
+    "contacts": "Nora Bell (responsável pela recepção) e Sam Ortiz (técnico de TI terceirizado) abrem os tickets.",
+    "reporters": [
+      {
+        "name": "Nora Bell",
+        "role": "Responsável pela recepção"
+      },
+      {
+        "name": "Sam Ortiz",
+        "role": "Técnico de TI terceirizado"
+      }
+    ]
+  },
+  "project": {
+    "name": "Smoke Desk",
+    "about": "Os recados de uma recepção, com o histórico de cada mudança. Dois serviços conversam por HTTP: a API guarda os recados no PostgreSQL e avisa o serviço de auditoria, que guarda o histórico no MySQL.",
+    "stack": "React, Vite e CSS Modules; Node.js e Express, em dois serviços; PostgreSQL e MySQL",
+    "skills": [
+      "Configuração e opções de funcionalidade",
+      "Consumo de API",
+      "Comunicação entre serviços",
+      "Criação de rotas e endpoints"
+    ]
+  },
+  "messages": {
+    "welcome": {
+      "subject": "Boas-vindas ao projeto Smoke Desk!",
+      "body": "Oi, que bom ter você aqui!\n\nSou a Rafaela, gerente de engenharia. Você está entrando no **Smoke Desk**, os recados da recepção do **Pinewood Coworking**. É pequeno: dois tickets, um de cada trilha.\n\nAssim a gente trabalha:\n\n- Seus tickets aparecem no **Board**. Arraste um para **In Progress** quando começar, e para **In QA** quando achar que terminou.\n- **Open in VS Code** conecta o seu editor ao workspace. Rode `npm run dev` no terminal do VS Code: ele sobe o cliente, a API e o serviço de auditoria. **Open app in browser** abre o balcão; o Dashboard mostra a porta que cada serviço ganhou.\n- Este projeto tem dois bancos ao lado do seu workspace: um **PostgreSQL** para os recados e um **MySQL** para o histórico. `npm run db:reset` devolve os exemplos aos dois.\n- A QA roda primeiro os testes do projeto, depois confere o ticket em si.\n- Travou? Mande mensagem para a **Priya** pelo ticket, uma dica de cada vez.\n\nQuando estiver pronto, clique em **Get next assignment**.\n\nRafaela"
+    },
+    "assignments": {
+      "front-1": {
+        "subject": "Novo ticket: SD-101",
+        "body": "O Sam diz que o painel Activity fica vazio no computador dele, e a Nora diz que no dela funciona.\n\nVeja onde o painel procura o serviço de auditoria."
+      },
+      "back-1": {
+        "subject": "Novo ticket: SD-201",
+        "body": "Um recado sumiu e o histórico não tem rastro dele. A Nora quer saber quem apaga o quê.\n\nVeja o que a API conta ao serviço de auditoria."
+      }
+    },
+    "completion": {
+      "subject": "Smoke Desk: projeto concluído!",
+      "body": "Você concluiu a trilha {{track}} inteira do Smoke Desk, então este projeto está pronto do seu lado. A Nora e o Sam agradecem.\n\nVocê pode fazer a outra trilha quando quiser.\n\nRafaela"
+    },
+    "trackCompletion": {
+      "subject": "A trilha {{track}} está concluída!",
+      "body": "Você fechou todos os tickets {{track}} do Smoke Desk. Bom trabalho.\n\nRafaela"
+    }
+  }
+}

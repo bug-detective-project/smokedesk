@@ -1,0 +1,7 @@
+{
+  "type": "fix",
+  "skills": {
+    "en": ["Configuration and feature flags", "Working with APIs"],
+    "pt": ["Configuração e opções de funcionalidade", "Consumo de API"]
+  }
+}

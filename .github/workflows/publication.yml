@@ -1,0 +1,17 @@
+name: publication
+
+# A pull request into qa runs bd validate and bd verify; the merge publishes and is tagged
+# qa-v<version>. See the catalog's README.
+on:
+  pull_request:
+    branches: [qa]
+  push:
+    branches: [qa]
+
+jobs:
+  project:
+    # Pinned by commit hash; the version comment must equal the @bug-detective/catalog dependency of
+    # package.json (bd validate checks it).
+    uses: bug-detective-project/catalog/.github/workflows/project.yml@1748ec26123ef389ad9509aff4578e9b64e52ca2 # v1.9.0
+    permissions:
+      contents: write

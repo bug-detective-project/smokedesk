@@ -1,0 +1,7 @@
+{
+  "hints": [
+    "The notes come from the API through Vite's proxy (`/api`), on the page's own address. The history does not: the browser calls the audit service directly. Find where the panel builds that address: `client/src/api/audit.ts`.",
+    "`auditUrl()` returns a fixed `'http://localhost:3002'`. That is the port the project prefers, not the one it got: when 3002 is taken, the app chooses another port and writes the full address in `VITE_AUDIT_URL`. Vite gives the code the variables that start with `VITE_` in `import.meta.env`.",
+    "Read the variable and keep 3002 only as the fallback: `return import.meta.env.VITE_AUDIT_URL || 'http://localhost:3002';`. Vite reads the variable when the dev server starts (and when it builds), so restart `npm run dev` after changing it."
+  ]
+}

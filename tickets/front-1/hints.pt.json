@@ -1,0 +1,7 @@
+{
+  "hints": [
+    "Os recados vêm da API pelo proxy do Vite (`/api`), no próprio endereço da página. O histórico não: o navegador chama o serviço de auditoria direto. Procure onde o painel monta esse endereço: `client/src/api/audit.ts`.",
+    "`auditUrl()` devolve um `'http://localhost:3002'` fixo. Essa é a porta que o projeto prefere, não a que ele ganhou: quando a 3002 está ocupada, o app escolhe outra porta e escreve o endereço completo em `VITE_AUDIT_URL`. O Vite entrega ao código as variáveis que começam com `VITE_` em `import.meta.env`.",
+    "Leia a variável e deixe a 3002 só como alternativa: `return import.meta.env.VITE_AUDIT_URL || 'http://localhost:3002';`. O Vite lê a variável quando o servidor de desenvolvimento sobe (e quando faz o build), então reinicie o `npm run dev` depois de mudá-la."
+  ]
+}

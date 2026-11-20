@@ -1,0 +1,7 @@
+{
+  "type": "fix",
+  "skills": {
+    "en": ["Communication between services", "Routes and endpoints"],
+    "pt": ["Comunicação entre serviços", "Criação de rotas e endpoints"]
+  }
+}

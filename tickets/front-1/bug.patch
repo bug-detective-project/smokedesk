@@ -1,0 +1,19 @@
+diff --git a/client/src/api/audit.ts b/client/src/api/audit.ts
+index f6b637c..09d4322 100644
+--- a/client/src/api/audit.ts
++++ b/client/src/api/audit.ts
+@@ -8,12 +8,9 @@ export interface AuditEvent {
+   at: string;
+ }
+ 
+-/**
+- * Where the audit service answers on the player's computer. The browser calls it directly, so the
+- * address is the port the app that runs the project chose, which it gives in VITE_AUDIT_URL.
+- */
++/** Where the audit service answers. */
+ export function auditUrl(): string {
+-  return import.meta.env.VITE_AUDIT_URL || 'http://localhost:3002';
++  return 'http://localhost:3002';
+ }
+ 
+ export const listEvents = () => request<AuditEvent[]>(`${auditUrl()}/events`);

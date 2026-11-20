@@ -1,0 +1,12 @@
+diff --git a/server/src/app.ts b/server/src/app.ts
+index a1c541d..7874b07 100644
+--- a/server/src/app.ts
++++ b/server/src/app.ts
+@@ -48,7 +48,6 @@ export function createApp({ pool, sendEvent, log = (line) => console.error(line)
+       res.status(404).json({ error: 'There is no such note' });
+       return;
+     }
+-    await tell({ action: 'deleted', noteId: note.id, text: note.text });
+     res.status(204).end();
+   });
+ 

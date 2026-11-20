@@ -1,0 +1,7 @@
+{
+  "hints": [
+    "The audit service keeps what it is told, and only the API tells it anything. Compare what the API does after creating a note with what it does after deleting one: both routes are in `server/src/app.ts`.",
+    "`POST /api/notes` saves the note and then calls `tell({ action: 'created', ... })`, which posts the event to the audit service (`server/src/audit-client.ts`). `DELETE /api/notes/:id` deletes the note and answers 204, and never calls `tell`.",
+    "After the note is deleted, and only when there was one, tell the audit service before answering: `await tell({ action: 'deleted', noteId: note.id, text: note.text });`. `deleteNote` returns the deleted note, so its text is still there. `tell` already logs a failure instead of throwing, so the note is deleted even when the audit service is down."
+  ]
+}
