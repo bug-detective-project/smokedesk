@@ -1,0 +1,35 @@
+/* Smoke Desk: slate neutrals, one indigo for actions; Inter for every text (bundled, @fontsource-variable/inter). */
+:root {
+  --ink: #0f172a;
+  --muted: #5b6577;
+  --line: #e2e6ee;
+  --surface: #ffffff;
+  --page: #f3f5f9;
+  --brand: #4338ca;
+  --brand-strong: #3730a3;
+  --brand-ink: #ffffff;
+  --ok: #166534;
+  --ok-soft: #e4f6ea;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgb(15 23 42 / 0.05), 0 8px 24px -16px rgb(15 23 42 / 0.25);
+  font-family: 'Inter Variable', system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--page);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 375px;
+}
+
+button,
+input {
+  font: inherit;
+}
